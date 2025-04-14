@@ -22,6 +22,14 @@ it('somente numeros', function (): void {
     expect($result)->toEqual($expecteds);
 });
 
+//function randomString
+it ('cria um texto randomico com x caracteres', function (): void {
+    $response = \CloudDFe\BancoCommon\Strings::randomString(10);
+    $len = strlen($response);
+    expect($response)->toBeString();
+    expect($len)->toEqual(10);
+});
+
 //function toAscii()
 it('converter para ascii', function (): void {
     $inputs = [
