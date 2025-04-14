@@ -1,0 +1,67 @@
+{
+    "name": "cloud-dfe/banco_common",
+    "type": "library",
+    "description": "Biblioteca de classes comuns para uso das bibliotecas de emissão de boletos.",
+    "keywords": [
+        "boleto",
+        "clouddfe"
+    ],
+    "homepage": "https://github.com/cloud-dfe/banco_common",
+    "license": ["private"],
+    "authors": [
+        {
+            "name": "Roberto L. Machado",
+            "email": "linux.rlm@gmail.com.br",
+            "homepage": "https://www.nfephp.com.br",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">= 8.3",
+        "ext-mbstring": "*",
+        "ext-iconv": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.8.1",
+        "pestphp/pest-plugin-type-coverage": "^3.5",
+        "phpstan/phpstan": "^2.1",
+        "rector/rector": "^2.0",
+        "symfony/var-dumper": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "CloudDFe\\BancoCommon\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "refacto": "rector",
+        "test:refacto": "rector --dry-run",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "pest --colors=always --coverage",
+        "test": [
+            "@test:refacto",
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "v1.0": "1.0-dev"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "stable"
+}
