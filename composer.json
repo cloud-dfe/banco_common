@@ -7,7 +7,7 @@
         "clouddfe"
     ],
     "homepage": "https://github.com/cloud-dfe/banco_common",
-    "license": ["private"],
+    "license": ["MIT"],
     "authors": [
         {
             "name": "Roberto L. Machado",
